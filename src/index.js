@@ -6,6 +6,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import 'modern-normalize/modern-normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
 ReactDOM.render(

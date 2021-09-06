@@ -1,17 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { authOperations } from '../redux/auth';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -38,31 +29,38 @@ export default function LoginView() {
 
   return (
     <div>
-      <h1>Страница логина</h1>
+      <h1>Please, log in</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
             type="email"
+            placeholder="Enter email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-        </label>
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
 
-        <label style={styles.label}>
-          Пароль
-          <input
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type="password"
+            placeholder="Password"
             name="password"
             value={password}
             onChange={handleChange}
           />
-        </label>
+        </Form.Group>
 
-        <button type="submit">Войти</button>
-      </form>
+        <Button variant="outline-light" type="submit">
+          Login
+        </Button>
+      </Form>
     </div>
   );
 }

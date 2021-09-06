@@ -1,17 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { authOperations } from '../redux/auth';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -42,36 +33,45 @@ export default function RegisterView() {
 
   return (
     <div>
-      <h1>Страница регистрации</h1>
+      <h1>Registed</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-
-        <label style={styles.label}>
-          Почта
-          <input
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            placeholder="Enter name"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            placeholder="Enter email"
           />
-        </label>
+        </Form.Group>
 
-        <label style={styles.label}>
-          Пароль
-          <input
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            placeholder="Password"
           />
-        </label>
+        </Form.Group>
 
-        <button type="submit">Зарегистрироваться</button>
-      </form>
+        <Button variant="outline-light" type="submit">
+          Registed
+        </Button>
+      </Form>
     </div>
   );
 }

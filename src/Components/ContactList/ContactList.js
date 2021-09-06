@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import contactsOperations from '../../redux/contacts/contacts-operations';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
 
@@ -21,13 +22,13 @@ const ContactList = () => {
           <p className={styles.description}>
             {name}: {number}
           </p>
-          <button
+          <Button
+            variant="outline-danger"
             type="button"
             onClick={() => onDeleteContact(id)}
-            className={styles.button}
           >
             Delete
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

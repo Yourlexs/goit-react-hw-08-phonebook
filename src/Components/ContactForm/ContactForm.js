@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
 import contactsOperations from '../../redux/contacts/contacts-operations';
 
@@ -67,9 +68,9 @@ export default function ContactForm() {
           className={style.input}
         />
       </label>
-      <button type="submit" className={style.button}>
+      <Button variant="outline-success" type="submit">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 }

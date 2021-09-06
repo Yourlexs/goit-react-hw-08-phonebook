@@ -1,0 +1,10 @@
+.container {
+  display: 'flex';
+  align-items: 'center';
+}
+
+.name {
+  font-weight: 700px;
+  margin-right: 10px;
+  margin-left: 35px;
+}
