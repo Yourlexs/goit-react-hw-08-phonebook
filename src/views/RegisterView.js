@@ -32,7 +32,7 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
+    <div className="form">
       <h1>Registed</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">

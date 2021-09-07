@@ -28,7 +28,7 @@ export default function LoginView() {
   };
 
   return (
-    <div>
+    <div className="form">
       <h1>Please, log in</h1>
 
       <Form onSubmit={handleSubmit} autoComplete="off">

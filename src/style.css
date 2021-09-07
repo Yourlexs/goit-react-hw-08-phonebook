@@ -27,8 +27,15 @@ h2 {
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 button {
   cursor: pointer;
+}
+
+.form {
+  margin-right: auto;
+  width: 300px;
+  margin-left: auto;
 }
